@@ -1,0 +1,82 @@
+***** Alphabet
+
+Correct
+<p>
+   @for (char letter = 'A'; letter <= 'Z'; letter++)
+   {<text>@letter</text>}
+</p>
+
+False
+<p>
+   @for (char letter = 'A'; letter <= 'Z'; letter++)
+   {
+       document.write(letter);
+   }
+</p>
+
+Correct
+@{
+   StringBuilder sb = new StringBuilder();
+   for (char letter = 'A'; letter <= 'Z'; letter++)
+   {
+       sb.Append(letter);
+   }
+}
+<p>@sb.ToString()</p>
+
+False
+<p>
+   @for (char letter = 'A'; letter <= 'Z'; letter++)
+   {<span>letter</span>}
+</p>
+
+
+
+***** Passing Data
+
+Correct
+By setting properties on the model that is passed to the view.
+By setting properties on the web controls that the view contains.
+By calling the helper method that the view contains.
+Correct
+By setting properties on the ViewBag dynamic object.
+Correct
+By adding items to the TempData dictionary.
+
+***** Bundling
+
+Which of these statements are true for bundling in ASP.NET MVC?
+
+Correct
+By default, bundling is disabled in debug mode.
+A link produced by @Styles.Render("~/Content/css") will be constant through the project lifetime.
+Correct
+There are different classes for minifying JavaScript and for minifying CSS.
+Bundling will set Cache-Control to no-cache.
+Correct
+Bundle.Include(virtualPath) method can accept some forms of wildcard (*) syntax.
+
+***** INput Types
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Advanced form</title>
+</head>
+<body>
+ <form>
+    Formula: <input name="formula" list="formula"><br />
+    Iterations: <input name="iterations" type="range" min="1" max="10"><br />
+    Precision: <input name="precision" type="number" min="1" max="100" value="50" ><br />
+
+<datalist id="formula">
+  <option value="sin">
+  <option value="cos">
+  <option value="tan">
+  <option value="cot">
+</datalist>
+    
+  </form>
+</body>
+</html>
